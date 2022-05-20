@@ -32,7 +32,7 @@ export function App() {
           />
 
           <input
-            type="text"
+            type="number"
             placeholder="Digite o seu peso. Ex: 75.3 (em kg)"
             value={weightField > 0 ? weightField : ''}
             onChange={(e) => setWeightField(Number(e.target.value))}
