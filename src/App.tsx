@@ -5,6 +5,7 @@ import { GridItem } from './components/GridItem';
 
 import styles from './App.module.css';
 import poweredImage from './assets/powered.png';
+import leftArrowImage from './assets/leftarrow.png';
 
 export function App() {
   const [heightField, setHeightField] = useState<number>(0);
@@ -16,6 +17,12 @@ export function App() {
 
     // buscando dados do IMC
     setIMCToShow(calculateIMC(heightField, weightField));
+  }
+
+  function handleBackButton() {
+    setIMCToShow(null);
+    setHeightField(0);
+    setWeightField(0);
   }
 
   return (
@@ -66,7 +73,16 @@ export function App() {
           }
           { imcToShow &&
             <div className={styles.rightIMC}>
-              <div className={styles.rightArrow}></div>
+              <div
+                className={styles.rightArrow}
+                onClick={handleBackButton}
+              >
+                <img
+                  src={leftArrowImage}
+                  alt="Seta de retorno"
+                  width={25}
+                />
+              </div>
 
               <GridItem
                 item={imcToShow}

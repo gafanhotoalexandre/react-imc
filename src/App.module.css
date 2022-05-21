@@ -78,4 +78,19 @@ header .headerContainer {
 .container .rightSide .rightIMC {
   flex: 1;
   display: flex;
+  position: relative;
+}
+
+.container .rightSide .rightArrow {
+  position: absolute;
+  background-color: #227c9d;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  left: -35px;
+  top: 145px;
 }
