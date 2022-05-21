@@ -18,8 +18,10 @@ export function calculateIMC(height: number, weight: number) {
 
   for (let i in imcLevels) {
     if (imc >= imcLevels[i].imc[0] && imc <= imcLevels[i].imc[1]) {
-      imcLevels[i].ownIMC = Number(imc.toFixed(2));
-      return imcLevels[i];
+      const imcLevelCopy: Level = { ...imcLevels[i] };
+
+      imcLevelCopy.ownIMC = Number(imc.toFixed(2));
+      return imcLevelCopy;
     }
   }
 
