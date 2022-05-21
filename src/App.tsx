@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import styles from './App.module.css';
-import poweredImage from './assets/powered.png';
-
 import { imcLevels, calculateIMC } from './helpers/imc';
 import { GridItem } from './components/GridItem';
+
+import styles from './App.module.css';
+import poweredImage from './assets/powered.png';
 
 export function App() {
   const [heightField, setHeightField] = useState<number>(0);

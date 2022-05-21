@@ -70,7 +70,6 @@ header .headerContainer {
 
 .container .rightSide .grid {
   flex: 1;
-  border: 1px solid;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
