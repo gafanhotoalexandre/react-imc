@@ -3,6 +3,8 @@ import { useState } from 'react';
 import styles from './App.module.css';
 import poweredImage from './assets/powered.png';
 
+import { imcLevels, calculateIMC } from './helpers/imc';
+
 export function App() {
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
@@ -47,7 +49,11 @@ export function App() {
         </section>
 
         <section className={styles.rightSide}>
-          Lado Direito
+          <div className={styles.grid}>
+            { imcLevels.map(({ title }, index) => (
+              <div key={index}>{title}</div>
+            )) }
+          </div>
         </section>
       </main>
     </div>
