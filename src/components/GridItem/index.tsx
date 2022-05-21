@@ -20,6 +20,10 @@ export function GridItem({ item }: GridItemProps) {
         { item.title }
       </div>
 
+      { item.ownIMC &&
+        <div className={styles.ownIMC}>Seu IMC é de {item.ownIMC} kg/m²</div>
+      }
+
       <div className={styles.gridInfo}>
         IMC está entre <strong>{item.imc[0]}</strong> e <strong>{item.imc[1]}</strong>
       </div>

@@ -14,11 +14,11 @@ export const imcLevels: Level[] = [
 ];
 
 export function calculateIMC(height: number, weight: number) {
-  const imc = weight / (height ** 2);
+  const imc = Math.round((weight / (height ** 2)) * 10) / 10;
 
   for (let i in imcLevels) {
-    if (imc >= imcLevels[i].imc[0] && imc < imcLevels[i].imc[1]) {
-      imcLevels[i].ownIMC = imc;
+    if (imc >= imcLevels[i].imc[0] && imc <= imcLevels[i].imc[1]) {
+      imcLevels[i].ownIMC = Number(imc.toFixed(2));
       return imcLevels[i];
     }
   }

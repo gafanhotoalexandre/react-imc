@@ -74,3 +74,8 @@ header .headerContainer {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
+.container .rightSide .rightIMC {
+  flex: 1;
+  display: flex;
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { imcLevels, calculateIMC } from './helpers/imc';
+import { imcLevels, calculateIMC, Level } from './helpers/imc';
 import { GridItem } from './components/GridItem';
 
 import styles from './App.module.css';
@@ -9,9 +9,13 @@ import poweredImage from './assets/powered.png';
 export function App() {
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
+  const [imcToShow, setIMCToShow] = useState<Level | null>(null);
 
   function handleCalculateButton() {
     if (!(heightField && weightField)) alert('Preencha todos os campos');
+
+    // buscando dados do IMC
+    setIMCToShow(calculateIMC(heightField, weightField));
   }
 
   return (
@@ -50,14 +54,25 @@ export function App() {
         </section>
 
         <section className={styles.rightSide}>
-          <div className={styles.grid}>
-            { imcLevels.map((item, index) => (
+          { !imcToShow &&
+            <div className={styles.grid}>
+              { imcLevels.map((item, index) => (
+                <GridItem
+                  key={index}
+                  item={item}
+                />
+              )) }
+            </div>
+          }
+          { imcToShow &&
+            <div className={styles.rightIMC}>
+              <div className={styles.rightArrow}></div>
+
               <GridItem
-                key={index}
-                item={item}
+                item={imcToShow}
               />
-            )) }
-          </div>
+            </div>
+          }
         </section>
       </main>
     </div>
