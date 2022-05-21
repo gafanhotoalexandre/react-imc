@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import poweredImage from './assets/powered.png';
 
 import { imcLevels, calculateIMC } from './helpers/imc';
+import { GridItem } from './components/GridItem';
 
 export function App() {
   const [heightField, setHeightField] = useState<number>(0);
@@ -50,8 +51,11 @@ export function App() {
 
         <section className={styles.rightSide}>
           <div className={styles.grid}>
-            { imcLevels.map(({ title }, index) => (
-              <div key={index}>{title}</div>
+            { imcLevels.map((item, index) => (
+              <GridItem
+                key={index}
+                item={item}
+              />
             )) }
           </div>
         </section>

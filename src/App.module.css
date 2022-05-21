@@ -62,3 +62,16 @@ header .headerContainer {
 .container .leftSide button:hover {
   opacity: .9;
 }
+
+/* Right Side */
+.container .rightSide {
+  display: flex;
+}
+
+.container .rightSide .grid {
+  flex: 1;
+  border: 1px solid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
