@@ -46,6 +46,10 @@ header .headerContainer {
   outline: 0;
 }
 
+.container .leftSide input:disabled {
+  opacity: .6;
+}
+
 .container .leftSide button {
   background-color: #227c9d;
   border: 0;
@@ -60,7 +64,10 @@ header .headerContainer {
 }
 
 .container .leftSide button:hover {
-  opacity: .9;
+  background-color: #408eaa;
+}
+.container .leftSide button:disabled {
+  background-color: #408eaa;
 }
 
 /* Right Side */
@@ -93,4 +100,9 @@ header .headerContainer {
   cursor: pointer;
   left: -35px;
   top: 145px;
+  transition: all ease .2s;
+}
+
+.container .rightSide .rightArrow:hover {
+  background-color: #408eaa;
 }
