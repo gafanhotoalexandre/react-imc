@@ -13,7 +13,10 @@ export function App() {
   const [imcToShow, setIMCToShow] = useState<Level | null>(null);
 
   function handleCalculateButton() {
-    if (!(heightField && weightField)) alert('Preencha todos os campos');
+    if (!(heightField && weightField)) {
+      alert('Preencha todos os campos');
+      return;
+    }
 
     // buscando dados do IMC
     setIMCToShow(calculateIMC(heightField, weightField));
